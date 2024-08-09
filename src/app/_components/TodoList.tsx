@@ -3,7 +3,7 @@ import {  atom, useAtom } from 'jotai'
 import { useState } from "react";
 import { trpc } from "../_trpc/client";
 import { serverClient, UserGetUser } from "../_trpc/serverClient";
-// import { queryAtom } from "../_trpc/jotaiClient";
+import { UsersAtom } from '../_trpc/jotaiClient';
 
 type Users = {
     id: number;
@@ -16,24 +16,29 @@ export default function TodoList({
 }: {
     initialUsers: Users[] | undefined
 }) {
-    const getUsers = trpc.users.getUsers.useQuery();
-    const idAtom = atom(getUsers)
-    const [data, refresh] = useAtom(idAtom)
+
+    const [dataJotai,setDataJotai] = useAtom(UsersAtom);
+
+    // console.log('dataJotai',dataJotai)
+
     const addUser = trpc.users.addUser.useMutation({
         onSettled: () => {
-            getUsers.refetch()
+            setDataJotai(UsersAtom);
         }
     });
   
     const [name, setName] = useState<string>("");
     const [race, setRace] = useState<string>("");
+    // const getUsers = trpc.users.getUsers.useQuery();
+    // const idAtom = atom(getUsers)
+    // const [data, refresh] = useAtom(idAtom)
     // const [data, refresh] = useAtom(queryAtom)
     // console.log(data)
     return (
         <div className='w-[70%] mx-auto border-2 border-black'>
             {JSON.stringify(initialUsers)}
-            <div>Initial users above</div>
-            {JSON.stringify(data.data)}
+            <div>------------Initial users above---------</div>
+            {JSON.stringify(dataJotai)}
             <div className="flex flex-col gap-3">
                 Name: {" "}
                 <input

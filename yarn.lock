@@ -1811,6 +1811,11 @@ jiti@^1.21.0:
   resolved "https://registry.yarnpkg.com/jiti/-/jiti-1.21.6.tgz#6c7f7398dd4b3142767f9a168af2f317a428d268"
   integrity sha512-2yTgeWTWzMWkHu6Jp9NKgePDaYHbntiwvYuuJLbbN9vl7DC9DvXKOB2BC3ZZ92D3cvV/aflH0osDfwpHepQ53w==
 
+jotai-tanstack-query@^0.8.6:
+  version "0.8.6"
+  resolved "https://registry.yarnpkg.com/jotai-tanstack-query/-/jotai-tanstack-query-0.8.6.tgz#dcd780fe995b844cc3696884eca32b78154334fc"
+  integrity sha512-ChzeDnI5FYtK8KHHj6RLe7igj0FahAxZ+X2d+4kqZsqte03PISXglVAW0KnJybRnMVe3H0z3EuJE7wMhW3WKfg==
+
 jotai-trpc@^0.7.0:
   version "0.7.0"
   resolved "https://registry.yarnpkg.com/jotai-trpc/-/jotai-trpc-0.7.0.tgz#d1ee0499c9066333843d545cad0fdd75b18fb29d"
