@@ -11,3 +11,10 @@ const handler = (req: Request) =>
   });
 
 export { handler as GET, handler as POST };
+
+// import { appRouter } from '@/server';
+// import * as trpcNext from '@trpc/server/adapters/next';
+
+// export default trpcNext.createNextApiHandler({
+//   router: appRouter,
+// });
